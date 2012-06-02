@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/utils/exporters
+END
+convert_obj_threejs.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/utils/exporters/convert_obj_threejs.py
+END
+convert_obj_threejs_slim.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/utils/exporters/convert_obj_threejs_slim.py
+END

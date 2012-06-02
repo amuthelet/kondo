@@ -1,0 +1,2 @@
+rcb4.o: rcb4.c rcb4.h ftdi.h
+ics.o: ics.c ics.h ftdi.h

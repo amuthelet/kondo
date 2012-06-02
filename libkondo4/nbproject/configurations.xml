@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="69">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <df name="libkondo4" root=".">
+      <df name="java" kind="SOURCE_LOGICAL_FOLDER">
+        <in>kondo.i</in>
+      </df>
+      <df name="pcb" kind="SOURCE_LOGICAL_FOLDER">
+        <df name="ftdi2kondo" kind="SOURCE_LOGICAL_FOLDER">
+        </df>
+        <df name="usb2kondo" kind="SOURCE_LOGICAL_FOLDER">
+        </df>
+      </df>
+      <df name="python" kind="SOURCE_LOGICAL_FOLDER">
+        <in>pykondo.i</in>
+      </df>
+      <df name="serial" kind="SOURCE_LOGICAL_FOLDER">
+        <in>serial.c</in>
+        <in>serial.h</in>
+      </df>
+      <df name="utils" kind="SOURCE_LOGICAL_FOLDER">
+        <in>run_motion.c</in>
+        <in>test_analog.c</in>
+        <in>test_digital.c</in>
+        <in>test_ics.c</in>
+      </df>
+      <df name="wii" kind="SOURCE_LOGICAL_FOLDER">
+        <in>wii.c</in>
+      </df>
+      <in>ftdi.c</in>
+      <in>ftdi.h</in>
+      <in>ics.c</in>
+      <in>ics.h</in>
+      <in>rcb4.c</in>
+      <in>rcb4.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>Makefile-libkondo4.mk</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile-libkondo4.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>GNU|GNU</compilerSet>
+        <platform>2</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>$(MAKE) -f Makefile</buildCommand>
+          <cleanCommand>$(MAKE) -f Makefile clean</cleanCommand>
+          <executablePath>./utils/run_motion</executablePath>
+        </makeTool>
+        <requiredProjects>
+          <makeArtifact PL="../libftdi-0.18"
+                        CT="0"
+                        CN="Default"
+                        AC="true"
+                        BL="true"
+                        WD="../libftdi-0.18"
+                        BC="${MAKE}  -f Makefile-libftdi-0.18.mk CONF=Default"
+                        CC="${MAKE}  -f Makefile-libftdi-0.18.mk CONF=Default clean"
+                        OP="">
+          </makeArtifact>
+        </requiredProjects>
+      </makefileType>
+      <item path="ics.c" ex="true" tool="0">
+      </item>
+      <item path="ics.h" ex="true" tool="3">
+      </item>
+      <item path="java/kondo.i" ex="true" tool="0">
+      </item>
+      <item path="python/pykondo.i" ex="true" tool="0">
+      </item>
+      <item path="rcb4.h" ex="true" tool="3">
+      </item>
+      <item path="serial/serial.c" ex="true" tool="0">
+      </item>
+      <item path="serial/serial.h" ex="true" tool="3">
+      </item>
+      <item path="utils/run_motion.c" ex="true" tool="0">
+      </item>
+      <item path="utils/test_analog.c" ex="true" tool="0">
+      </item>
+      <item path="utils/test_digital.c" ex="true" tool="0">
+      </item>
+      <item path="utils/test_ics.c" ex="true" tool="0">
+      </item>
+      <item path="wii/wii.c" ex="true" tool="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

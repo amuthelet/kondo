@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo cp libkondo.so /usr/lib
+sudo cp libkondo.so /usr/local/lib
+echo Done

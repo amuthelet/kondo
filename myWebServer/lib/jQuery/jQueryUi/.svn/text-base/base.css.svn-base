@@ -1,0 +1,107 @@
+/* Site
+   -------------------------------- */
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	margin: 0;
+	padding: 0 0 20px;
+	min-height: 100%;
+	/* font-family: "Lucida Grande", "Arial", "Helvetica", "Verdana", "sans-serif"; */
+	font-family: "Arial", "Helvetica", "Verdana", "sans-serif";
+	font-size: 10px;
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 956px;
+	position: relative;
+	/* 
+	background: url('/images/body_footer_bg.jpg') no-repeat center bottom;
+	padding-bottom: 365px;
+	 */
+}
+
+
+/* Demos */
+
+.demos-nav, 
+.left-nav .demos-nav dt, 
+.left-nav .demos-nav dd, 
+.left-nav .demos-nav ul, 
+.left-nav .demos-nav li {
+	margin: 0;
+	padding: 0
+}
+
+.left-nav .demos-nav {
+	float: left;
+	width: 155px;
+	font-size: 1.3em;
+	padding:14px 23px 8px 22px;
+}
+
+.left-nav .demos-nav dt,
+.left-nav .demos-nav h4 {
+	margin: 0;
+	padding: 0;
+	font: normal 1.1em "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	color: #e87b10;
+}
+
+.left-nav .demos-nav dt,
+.left-nav .demos-nav h4 {
+	margin-top: 1.5em;
+	margin-bottom: 0;
+	padding-left: 8px;
+	padding-bottom:5px;
+	line-height: 1.2em;
+	border-bottom: 1px solid #F4F4F4;
+}
+
+.left-nav .demos-nav dd a,
+.left-nav .demos-nav li a {
+	border-bottom: 1px solid #F4F4F4;
+	display:block;
+	padding: 2px 3px 2px 8px;
+	font-size: 90%;
+	text-decoration: none;
+	color: #555 ;
+	margin:2px 0;
+	height:13px;
+}
+
+.left-nav .demos-nav dd a:hover,
+.left-nav .demos-nav dd a:focus,
+.left-nav .demos-nav li a:hover,
+.left-nav .demos-nav li a:focus {
+	background: #f3f3f3;
+	color:#000;
+	-moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+ .demos-nav dd a.selected {
+	background: #555;
+	color:#ffffff;
+	-moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+
+
+/* ---------------------------------------------------------------
+Clearfix
+--------------------------------------------------------------- */
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix { display: inline-block; }
+
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */

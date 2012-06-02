@@ -1,0 +1,6 @@
+#!/bin/sh
+sudo cp _pykondo.so /usr/share/blender/2.55/scripts/modules
+sudo cp _pykondo.so /usr/local/lib
+
+sudo cp pykondo.py /usr/share/blender/2.55/scripts/modules
+echo Done

@@ -1,0 +1,4 @@
+run_motion.o: run_motion.c ../rcb4.h ../ftdi.h
+test_analog.o: test_analog.c ../rcb4.h ../ftdi.h
+test_digital.o: test_digital.c ../rcb4.h ../ftdi.h
+test_ics.o: test_ics.c ../ics.h ../ftdi.h

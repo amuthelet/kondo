@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/httpRoot/lib/jQuery-Touch-and-Gesture-Event
+END
+touchesWithoutJQuery.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2/trunk/httpRoot/lib/jQuery-Touch-and-Gesture-Event/touchesWithoutJQuery.js
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/trunk/httpRoot/lib/jQuery-Touch-and-Gesture-Event/README
+END
+browserTouchSupport.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2/trunk/httpRoot/lib/jQuery-Touch-and-Gesture-Event/browserTouchSupport.js
+END

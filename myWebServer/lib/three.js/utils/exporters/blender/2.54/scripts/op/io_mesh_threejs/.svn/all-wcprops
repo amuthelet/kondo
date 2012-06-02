@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/utils/exporters/blender/2.54/scripts/op/io_mesh_threejs
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/utils/exporters/blender/2.54/scripts/op/io_mesh_threejs/__init__.py
+END
+export_threejs.py
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/utils/exporters/blender/2.54/scripts/op/io_mesh_threejs/export_threejs.py
+END

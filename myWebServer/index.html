@@ -1,0 +1,86 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <title>Kondo Cmd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+</head>
+
+
+<body>
+
+    <div data-role="page">
+        <div data-role="header" data-theme="b" id="header" style=text-align:right>
+            Battery:----
+        </div><!-- /header -->
+
+        <div data-role="content" data-theme="b">
+            <fieldset class="ui-grid-b">
+                <div class="ui-block-a"><a id="bt_move_turnleft" href="#" data-role="button" data-icon="back" data-iconpos="top"	onclick="KondoAction(CMD_PLAY_MOTION,19)";></a>		</div>
+                <div class= "ui-block-b"><a id="bt_move_forward" href="#" data-role="button" data-icon="arrow-u"	data-iconpos="top"	onclick="KondoAction(CMD_PLAY_MOTION,15)";></a>		</div>
+                <div class="ui-block-c"><a id="bt_move_turnright" href="#" data-role="button" data-icon="forward" data-iconpos="top"	onclick="KondoAction(CMD_PLAY_MOTION,20)";></a>		</div>
+
+
+                <div class="ui-block-a"><a id="bt_move_left" href="#" data-role="button" data-icon="arrow-l" data-iconpos="top"	onclick="KondoAction(CMD_PLAY_MOTION,17)";></a>		</div>
+                <div class="ui-block-b"><a id="bt_move_backward" href="#" data-role="button" data-icon="arrow-d" data-iconpos="top"	onclick="KondoAction(CMD_PLAY_MOTION,16)";></a>		</div>
+                <div class="ui-block-c"><a id="bt_move_right" href="#" data-role="button" data-icon="arrow-r" data-iconpos="top"	onclick="KondoAction(CMD_PLAY_MOTION,18)";></a>		</div>
+            </fieldset>
+            <center>
+                <iframe id="video-feedback" src="" width="160" height="120" frameborder="0"></iframe>
+                <script>
+                    url=KondoAction(CMD_SET_VIDEO,0,document.getElementById("video-feedback"));
+                </script>
+            </center>
+            <fieldset class="ui-grid-b">
+                <div class="ui-block-a"></div>
+                <div class="ui-block-b">
+                    <select onchange="KondoAction(CMD_PLAY_MOTION, this.value);">
+                        <option>Motion..</option>
+                        <option value="0">Greeting</option>
+                        <option value="1">Home Position</option>
+                        <option value="2">Wave</option>
+                        <option value="3">HipHipHipHurray!</option>
+                        <option value="4">Chagrined Drop</option>
+                        <option value="5">Headstand</option>
+                        <option value="6">Clap</option>
+                        <option value="7">10 Claps</option>
+                        <option value="8">Rythm claps</option>
+                        <option value="9">Push-ups</option>
+                        <option value="10">One legged bend</option>
+                        <option value="11">Bunny hop A</option>
+                        <option value="12">Bunny hop B</option>
+                        <option value="13">Stand-up stomach</option>
+                        <option value="14">Stand-up back</option>
+                        <option value="15">Safewalk forward</option>
+                        <option value="16">Safewalk backward</option>
+                        <option value="17">Safewalk left</option>
+                        <option value="18">Safewalk right</option>
+                        <option value="19">Quickturn left</option>
+                        <option value="20">Quickturn right</option>
+                        <option value="21">Regular walk forward</option>
+                        <option value="22">Regular walk back</option>
+                        <option value="23">Regular walk left</option>
+                        <option value="24">Regular walk right</option>
+                        <option value="25">Kick ball fwd left</option>
+                        <option value="26">Kick ball fwd right</option>
+                        <option value="27">Kick ball side left</option>
+                        <option value="28">Kick ball side right</option>
+                        <option value="29">Kick ball backwd left</option>
+                        <option value="30">Kick ball backwd right</option>
+                    </select>
+                </div>
+                <div class="ui-block-c"></div>
+            </fieldset>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-theme="b">
+            -
+        </div><!-- /header -->
+    </div><!-- /page -->
+</body>
+</html>

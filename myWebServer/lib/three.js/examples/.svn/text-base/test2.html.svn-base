@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>three.js - geometry - cube</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+		<style type="text/css">
+			body {
+				font-family: Monospace;
+				background-color: #f0f0f0;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script type="text/javascript" src="../build/Three.js"></script>
+		<script type="text/javascript" src="../src/extras/primitives/Cube.js"></script>
+		<script type="text/javascript" src="js/Stats.js"></script>
+
+		<script type="text/javascript">
+
+			var container, stats;
+
+			var camera, scene, renderer;
+
+			var cube, plane;
+
+			var targetRotationX = 0;
+			var targetRotationXOnMouseDown = 0;
+			var targetRotationY = 0;
+			var targetRotationYOnMouseDown = 0;
+
+			var mouseX = 0;
+			var mouseXOnMouseDown = 0;
+			var mouseY = 0;
+			var mouseYOnMouseDown = 0;
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+			init();
+			setInterval(loop, 1000/60);
+
+			function init() {
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+				
+				camera = new THREE.Camera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
+				camera.position.x = 0;
+				camera.position.y = -40;
+				camera.position.z = 0;
+				camera.target.position.x = 0;
+				camera.target.position.y = -40;
+				camera.target.position.z = 0;
+
+				scene = new THREE.Scene();
+				var mult = 10;
+				function addServos(scene,servosPos,delta,config){
+					geometry = new Cube( 1*mult, 1.5*mult, 1*mult );
+					for (var i = 0; i < geometry.faces.length; i++) {
+						geometry.faces[i].material = [ new THREE.MeshColorFillMaterial( config.color+Math.random()*10, 1 ) ];
+					}
+					cube = new THREE.Mesh(geometry, new THREE.MeshFaceMaterial() );
+					delta += servosPos[config.id]?servosPos[config.id]:0;
+					config.rz +=delta;
+					cube.servoID 		= config.id;
+					cube.position.x 	= config. x*5;
+					cube.position.y 	= config. y*5;
+					cube.position.z 	= config. z*5;
+					cube.rotation.x		= config.rx*3.14*2/360;
+					cube.rotation.y		= config.ry*3.14*2/360;
+					cube.rotation.z		= config.rz*3.14*2/360;
+					scene.addObject(cube);
+					if (config.childs){
+						for (var k in config.childs){
+							var child=config.childs[k];
+							addServos(scene,servosPos,delta,{
+								id		: child.id,
+								x		: child. x + config. x + (delta?Math.cos(delta)*1:0),
+								y		: child. y + config. y + (delta?Math.sin(delta)*1:0),
+								z		: child. z + config. z,
+								rx		: child.rx,
+								ry		: child.ry,
+								rz		: child.rz+delta,
+								childs	: child.childs?child.childs:null,
+								color	: child.color ?child.color :null								
+							});
+						}
+					}
+				}
+				var kinetic = {
+					id: "c0", x: 0, y:  0, z:0, rx:0	, ry:0, rz:  0, color : 0xa0a0a0,
+					childs : [{
+						id: "a0", x: 0, y:  +6, z:0, rx:0	, ry:0, rz:  0, color : 0xa0aa,
+					},{
+						id: "r1", x: 3, y:  4, z:0, rx:0	, ry:0, rz: 90, color : 0xff0000,
+						childs : [{
+							id: "r2", x: +3, y:  -1, z:0, rx:0	, ry:0, rz:180, color : 0xa0aa,
+							childs : [{
+								id: "r4", x: 0, y: -4, z:0, rx:0	, ry:0, rz:180,color : 0x444444
+							}]
+						}]
+					},{
+						id: "l1", x: -3, y:  4, z:0, rx:0	, ry:0, rz: 90, color : 0xff0000,
+						childs : [{
+							id: "l2", x: -3, y:  -1, z:0, rx:0	, ry:0, rz:180, color : 0xa0aa,
+							childs : [{
+								id: "l4", x: 0, y: -4, z:0, rx:0	, ry:0, rz:180, color : 0x444444
+							}]
+						}]
+					},{
+						id: "r6", x: 2, y: -3, z:0, rx:0	, ry:0, rz: 90, color : 0x0aa,
+						childs:[{
+							id: "r7", x: 0, y: -3, z:0, rx:0	, ry:0, rz:180, color : 0x000011,
+							childs:[{
+								id: "r8", x: 0, y: -4, z:0, rx:0	, ry:0, rz:180, color : 0x000011,
+								childs:[{
+									id: "r9", x: 1, y: -3, z:0, rx:0	, ry:0, rz:90, color : 0x444444
+								}]
+							}]
+						}]
+					},{
+						id: "l6", x: -2, y: -3, z:0, rx:0	, ry:0, rz: 90,label:"",color : 0x0aa,
+						childs:[{
+							id: "l7", x: 0, y: -3, z:0, rx:0	, ry:0, rz:180,label:"",color : 0x000011,
+							childs:[{
+								id: "l8", x: 0, y: -4, z:0, rx:0	, ry:0, rz:180,label:"",color : 0x000011,
+								childs:[{
+									id: "l9", x: -1, y: -3, z:0, rx:0	, ry:0, rz:90,label:"",color : 0x444444
+								}]
+							}]
+						}]
+					}]
+				};
+				var servosPos = {
+					"l6":-10,
+					"l8":-20
+				};
+				addServos(scene,servosPos,0,kinetic);
+				renderer = new THREE.CanvasRenderer();
+				
+				renderer.setSize(  window.innerWidth, window.innerHeight );
+
+				container.appendChild( renderer.domElement );
+
+				stats = new Stats();
+				stats.domElement.style.position = 'absolute';
+				stats.domElement.style.top = '0px';
+				container.appendChild( stats.domElement );
+
+				document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+			}
+
+			function onDocumentMouseDown( event ) {
+				event.preventDefault();
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+				document.addEventListener( 'mouseout', onDocumentMouseOut, false );
+				mouseXOnMouseDown = event.clientX - windowHalfX;
+				mouseYOnMouseDown = event.clientY - windowHalfY;
+				targetRotationXOnMouseDown = targetRotationX;
+				targetRotationYOnMouseDown = targetRotationY;
+			}
+
+			function onDocumentMouseMove( event ) {
+				mouseX = event.clientX - windowHalfX;
+				mouseY = event.clientY - windowHalfY;
+				targetRotationX = targetRotationXOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.02;
+				targetRotationY = targetRotationYOnMouseDown + ( mouseY - mouseYOnMouseDown ) * 0.02;
+			}
+
+			function onDocumentMouseUp( event ) {
+				document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.removeEventListener( 'mouseup'  , onDocumentMouseUp  , false );
+				document.removeEventListener( 'mouseout' , onDocumentMouseOut , false );
+			}
+
+			function onDocumentMouseOut( event ) {
+				document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.removeEventListener( 'mouseup'  , onDocumentMouseUp  , false );
+				document.removeEventListener( 'mouseout' , onDocumentMouseOut , false );
+			}
+
+			function onDocumentTouchStart( event ) {
+				if ( event.touches.length == 1 ) {
+					event.preventDefault();
+					mouseXOnMouseDown = event.touches[ 0 ].pageX - windowHalfX;
+					mouseYOnMouseDown = event.touches[ 0 ].pageY - windowHalfY;
+					targetRotationXOnMouseDown = targetRotationX;
+					targetRotationYOnMouseDown = targetRotationY;
+				}
+			}
+
+			function onDocumentTouchMove( event ) {
+				if ( event.touches.length == 1 ) {
+					event.preventDefault();
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+					targetRotationX = targetRotationXOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.05;
+					targetRotationY = targetRotationYOnMouseDown + ( mouseY - mouseXOnMouseDown ) * 0.05;
+				}
+			}
+
+			function loop() {
+				targetRotationX = targetRotationX+ 0.02;
+				//targetRotationY = targetRotationY+ 0.02;
+				camera.position.x= Math.cos(targetRotationX)*150;
+				camera.position.z= Math.sin(targetRotationX)*150;
+				camera.position.y= Math.sin(targetRotationY)*150;
+				
+				renderer.render(scene, camera);
+				stats.update();
+			}
+
+		</script>
+
+	</body>
+</html>

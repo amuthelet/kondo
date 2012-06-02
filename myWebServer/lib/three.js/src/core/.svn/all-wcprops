@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core
+END
+Vector2.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Vector2.js
+END
+Rectangle.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Rectangle.js
+END
+Vector3.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Vector3.js
+END
+Vector4.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Vector4.js
+END
+Matrix3.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Matrix3.js
+END
+Matrix4.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Matrix4.js
+END
+UV.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/UV.js
+END
+Ray.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Ray.js
+END
+Geometry.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Geometry.js
+END
+Vertex.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Vertex.js
+END
+Color.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Color.js
+END
+Face3.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Face3.js
+END
+Face4.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/httpRoot/lib/three.js/src/core/Face4.js
+END
